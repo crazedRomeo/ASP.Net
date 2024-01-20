@@ -1,0 +1,37 @@
+﻿@model List<IndexedSearch.Models.UsersModel>
+<table id="fresh-table" class="table table-striped" border="0" align="center" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="text-align: center; "><b>No</b></td>
+        <td style="text-align: center;"><b>UserID</b></td>
+        <td style="text-align: center;"><b>UserName</b></td>
+        <td style="text-align: center;"><b>Role</b></td>
+        <td style="text-align: center;"><b>LastLogin</b></td>
+        <td style="text-align: center;"><b>Fname</b></td>
+        <td style="text-align: center;"><b>Lname</b></td>
+        <td style="text-align: center;"><b>Department</b></td>
+        <td style="text-align: center;"><b>Doj</b></td>
+        <td style="text-align: center;"><b>MgId</b></td>
+        <td style="text-align: center;"><b>Seniority</b></td>
+        <td style="text-align: center;"><b>EmpCode</b></td>
+    </tr>
+
+    @{ int line_id = 0; string bgcolor = ""; }
+    @foreach (var UserModel in Model)
+    {
+        <tr>
+            @{ bgcolor = (line_id++ % 2) == 0 ? "white" : "lightgrey"; }
+            <td style="background-color: @bgcolor; text-align: center; width: 90px">@line_id</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.UserId</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Username</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Role</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.LastLogin</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Fname</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Lname</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Department</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Doj</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Mgld</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.Seniority</td>
+            <td style="background-color: @bgcolor; text-align: left;">@UserModel.EmpCode</td>
+        </tr>
+    }
+</table>
